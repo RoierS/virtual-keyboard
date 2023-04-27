@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
@@ -30,8 +29,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src', 'index.html'),
-        filename: 'index.html',
+      template: path.resolve(__dirname, 'src', 'index.html'),
+      filename: 'index.html',
     }),
     // new CopyWebpackPlugin({
     //     patterns: [
@@ -45,5 +44,5 @@ module.exports = {
   devServer: {
     watchFiles: path.resolve(__dirname, 'src'),
     port: 9000,
-    },
+  },
 };

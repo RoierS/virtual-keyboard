@@ -1,5 +1,1 @@
-import './style.css'
-
-
-
-console.log('hi')
+import './style.css';
