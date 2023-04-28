@@ -1,0 +1,28 @@
+h1 {
+  color: rgb(22, 171, 204);
+}
+.keybord {
+  user-select: none;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: blanchedalmond;
+  border-radius: 5px;
+  padding: 8px;
+}
+.keybord__key {
+  border: none;
+  background-color: rgb(107, 57, 7);
+  border-radius: 5px;
+  margin: 0 5px 5px 0;
+  padding: 8px;
+  cursor: pointer;
+  color: aliceblue;
+  min-width: 30px;
+  transition: transform 0.8s;
+}
+.keyboard__key:active {
+  transform: translateY(2px);
+}
