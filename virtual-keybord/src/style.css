@@ -1,28 +1,103 @@
 h1 {
   color: rgb(22, 171, 204);
+  text-align: center;
 }
-.keybord {
+body {
+  background-color: rgb(8 94 111);
+}
+
+.text-area__wrapper {
+  min-width: 500px;
+  margin-bottom: 20px;
+}
+
+.text-area {
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 18px;
+  display: block;
+  resize: none;
+  max-height: 200px;
+  width: 100%;
+  height: 200px;
+  min-height: 150px;
+  background-color: #d8cfcf;
+  color: #352c1d;
+  overflow: auto;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-area__cursor {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 2px;
+  height: 20px;
+  background-color: #000;
+  animation: cursor-blink 1s infinite;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.keyboard__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.keyboard {
   user-select: none;
   max-width: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: blanchedalmond;
+  background: radial-gradient(rgb(7, 117, 139), rgb(7, 117, 139));
+  border: 2px solid rgb(247 249 253);
+  box-shadow: 0px 0px 1px 2px rgb(66 222 255), 
+              0px 0px 2px 2px rgb(24 206 239), 
+              0px 0px 2px 3px rgb(24 206 239), 
+              inset 0px 0px 1px 2px rgb(66 222 255), 
+              inset 0px 0px 2px 3px rgb(24 206 239),
+              inset 0px 0px 2px 3px rgb(24 206 239);
   border-radius: 5px;
-  padding: 8px;
+  padding: 20px;
 }
-.keybord__key {
-  border: none;
-  background-color: rgb(107, 57, 7);
+.keyboard__key {
+  min-width: 36px;
+  min-height: 36px;
+  background-color: transparent;
+  border: 1px solid rgb(247 249 253);
+  box-shadow: 0px 0px 0.5px 1px rgb(66 222 255), 
+              0px 0px 0.5px 1px rgb(24 206 239), 
+              inset 0px 0px 0.5px 1px rgb(66 222 255), 
+              inset 0px 0px 0.5px 1px rgb(24 206 239);
   border-radius: 5px;
-  margin: 0 5px 5px 0;
+  margin: 0 10px 10px 0;
   padding: 8px;
   cursor: pointer;
   color: aliceblue;
-  min-width: 30px;
-  transition: transform 0.8s;
+  text-shadow: 0px 0px 1px rgb(66 222 255), 
+               0px 0px 1px rgb(24 206 239),
+               0px 0px 1px rgb(24 206 239),
+               0px 0px 1px rgb(24 206 239);
+  transition: all 0.4s;
 }
-.keyboard__key:active {
-  transform: translateY(2px);
+
+.active {
+  background-color: aqua;
+  transform: translateY(-5px);
 }

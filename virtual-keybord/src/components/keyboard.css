@@ -1,0 +1,5 @@
+.keyboard__key--space {
+  min-width: 200px;
+  height: 31.5px;
+  vertical-align: top;
+}
