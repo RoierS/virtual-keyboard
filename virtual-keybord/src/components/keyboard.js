@@ -1,6 +1,17 @@
-import './keyboard.css';
+const createElement = (tagName, className) => {
+  const newElement = document.createElement(tagName);
+  newElement.classList.add(className);
+  return newElement;
+};
 
-
+const keyboardContainer = createElement('div', 'keyboard__container');
+const textArea = createElement('div', 'text-area__wrapper');
+const textAreaInput = createElement('textarea', 'text-area');
+const keyboard = createElement('div', 'keyboard');
+document.body.append(keyboardContainer);
+keyboardContainer.appendChild(textArea);
+textArea.appendChild(textAreaInput);
+keyboardContainer.appendChild(keyboard);
 
 const keyboardLayout = {
   eng: [
@@ -32,74 +43,24 @@ const keyboardLayout = {
     ['Ctrl', 'Alt', 'Cmd', ' ', 'Cmd', 'Alt', 'Left', 'Down', 'Right'],
   ],
 };
-
-const createElement = (tagName, className) => {
-  const newElement = document.createElement(tagName);
-  newElement.classList.add(className);
-  return newElement;
-}
-
-const createkeyboard = () => {
-  const keyboardContainer = createElement('div', 'keyboard__container');
-  const textArea = createElement('div', 'text-area__wrapper');
-  const textAreaInput = createElement('textarea', 'text-area');
-  const keyboard = createElement('div', 'keyboard');
-
-  // let isShifted = false;
-
-  // const currentLayout = isShifted ? keyboardLayout.engShift : keyboardLayout.eng;
-  const currentLayout = keyboardLayout.eng;
-
-  currentLayout.forEach((row) => {
+const currentLayout = keyboardLayout.eng;
+const createkeyboard = (layout) => {
+  keyboard.innerHTML = '';
+  layout.forEach((row) => {
     const rowElement = createElement('div', 'keyboard__row');
-
     row.forEach((key) => {
       const keyElement = createElement('button', 'keyboard__key');
-      
       keyElement.textContent = key;
       if (key === ' ') {
         keyElement.classList.add('keyboard__key--space');
       }
-      if (key === 'Tab') {
-        keyElement.classList.add('keyboard__key--tab');
-      }
-      if (key === 'Shift') {
-        keyElement.classList.add('keyboard__key--shift');
-      }
-      if (key === 'Caps Lock') {
-        keyElement.classList.add('keyboard__key--caps');
-      }
-      if (key === 'Enter') {
-        keyElement.classList.add('keyboard__key--enter');
-      }
-      if (key === 'Alt') {
-        keyElement.classList.add('keyboard__key--alt');
-      }
-      if (key === 'Up') {
-        keyElement.classList.add('keyboard__key--up');
-      }
-      if (key === 'Down') {
-        keyElement.classList.add('keyboard__key--down');
-      }
-      if (key === 'Left') {
-        keyElement.classList.add('keyboard__key--left');
-      }
-      if (key === 'Right') {
-        keyElement.classList.add('keyboard__key--right');
-      }
-      if (key === 'Cmd') {
-        keyElement.classList.add('keyboard__key--cmd');
-      }
-
-      keyboard.appendChild(rowElement);
       rowElement.appendChild(keyElement);
-      // isShifted = true;
     });
+    keyboard.appendChild(rowElement);
   });
-  document.body.append(keyboardContainer);
-  keyboardContainer.appendChild(textArea);
-  textArea.appendChild(textAreaInput);
-  keyboardContainer.appendChild(keyboard);
+  return keyboard;
 };
+
+createkeyboard(currentLayout);
 
 export { createkeyboard, keyboardLayout, createElement };

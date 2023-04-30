@@ -101,3 +101,7 @@ body {
   background-color: aqua;
   transform: translateY(-5px);
 }
+.keyboard__key:active {
+  background-color: aqua;
+  transform: translateY(-5px);
+}
