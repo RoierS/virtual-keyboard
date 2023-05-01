@@ -29,7 +29,6 @@ textArea.appendChild(textAreaInput);
 keyboardContainer.appendChild(keyboard);
 header.appendChild(headerTitle);
 
-
 const keyboardLayout = {
   eng: [
     ['§', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
@@ -60,6 +59,7 @@ const keyboardLayout = {
     ['Ctrl', 'Alt', 'Cmd', ' ', 'Cmd', 'Alt', 'Left', 'Down', 'Right'],
   ],
 };
+
 const currentLayout = keyboardLayout.eng;
 const createkeyboard = (layout) => {
   keyboard.innerHTML = '';
@@ -100,4 +100,4 @@ const createkeyboard = (layout) => {
 
 createkeyboard(currentLayout);
 
-export { createkeyboard, keyboardLayout, createElement };
+export { createkeyboard, keyboardLayout };

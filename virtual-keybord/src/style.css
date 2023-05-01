@@ -148,12 +148,16 @@ body {
 .keyboard__key--space {
   flex: auto;
 }
+.keyboard__key:hover {
+  background-color: rgba(4, 175, 175, 0.5);
+  transform: translateY(1px);
+}
 .active {
-  background-color: aqua;
+  background-color: rgb(4, 175, 175);
   transform: translateY(-5px);
 }
 .keyboard__key:active {
-  background-color: aqua;
+  background-color: rgb(4, 175, 175);
   transform: translateY(-5px);
 }
 
