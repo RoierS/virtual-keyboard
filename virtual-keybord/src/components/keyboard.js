@@ -4,14 +4,31 @@ const createElement = (tagName, className) => {
   return newElement;
 };
 
-const keyboardContainer = createElement('div', 'keyboard__container');
-const textArea = createElement('div', 'text-area__wrapper');
+const wrapper = createElement('div', 'wrapper');
+const header = createElement('header', 'header');
+const headerTitle = createElement('h1', 'header__title');
+const footer = createElement('footer', 'footer');
+const keyboardContainer = createElement('main', 'keyboard__container');
+const textArea = createElement('section', 'text-area__wrapper');
 const textAreaInput = createElement('textarea', 'text-area');
-const keyboard = createElement('div', 'keyboard');
-document.body.append(keyboardContainer);
+const keyboard = createElement('section', 'keyboard');
+const info = createElement('p', 'footer__info');
+const langSwitch = createElement('p', 'footer__lang-switch');
+headerTitle.textContent = 'Virtual Keybord';
+info.textContent = 'The keyboard was created in MacOS';
+langSwitch.textContent = 'To switch language press "Left Cmd"';
+
+document.body.append(wrapper);
+wrapper.append(header);
+wrapper.append(keyboardContainer);
+wrapper.append(footer);
+footer.append(info);
+footer.append(langSwitch);
 keyboardContainer.appendChild(textArea);
 textArea.appendChild(textAreaInput);
 keyboardContainer.appendChild(keyboard);
+header.appendChild(headerTitle);
+
 
 const keyboardLayout = {
   eng: [
@@ -53,6 +70,26 @@ const createkeyboard = (layout) => {
       keyElement.textContent = key;
       if (key === ' ') {
         keyElement.classList.add('keyboard__key--space');
+      }
+      keyElement.setAttribute('id', key);
+      switch (key) {
+        case 'Backspace':
+          keyElement.innerHTML = '<i class="material-icons">backspace</i>';
+          break;
+        case 'Left':
+          keyElement.innerHTML = '<i class="material-icons">arrow_left</i>';
+          break;
+        case 'Right':
+          keyElement.innerHTML = '<i class="material-icons">arrow_right</i>';
+          break;
+        case 'Down':
+          keyElement.innerHTML = '<i class="material-icons">arrow_drop_down</i>';
+          break;
+        case 'Up':
+          keyElement.innerHTML = '<i class="material-icons">arrow_drop_up</i>';
+          break;
+        default:
+          break;
       }
       rowElement.appendChild(keyElement);
     });

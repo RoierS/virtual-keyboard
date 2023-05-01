@@ -10,3 +10,10 @@ document.addEventListener('keyup', () => {
     key.classList.remove('active');
   });
 });
+document.addEventListener('keydown', (e) => {
+  keys.forEach((key) => {
+    if (e.key === key.id) {
+      key.classList.add('active');
+    } 
+  })
+});
