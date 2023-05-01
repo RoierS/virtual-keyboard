@@ -1,0 +1,58 @@
+
+.keyboard__key {
+  min-width: 45px;
+  min-height: 45px;
+  background-color: transparent;
+  border: 1px solid rgb(247 249 253);
+  box-shadow: 0px 0px 0.5px 1px rgb(66 222 255), 
+              0px 0px 0.5px 1px rgb(24 206 239), 
+              inset 0px 0px 0.5px 1px rgb(66 222 255), 
+              inset 0px 0px 0.5px 1px rgb(24 206 239);
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  color: aliceblue;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 1px rgb(66 222 255), 
+               0px 0px 1px rgb(24 206 239),
+               0px 0px 1px rgb(24 206 239),
+               0px 0px 1px rgb(24 206 239);
+  transition: all 0.4s;
+}
+
+#Backspace {
+  vertical-align: bottom;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+#Tab,
+#Enter,
+#Backspace,
+#Shift {
+  flex: auto;
+}
+
+#Left,
+#Down,
+#Right,
+#Left,
+#Up {
+  min-width: 50px;
+}
+
+.keyboard__key--space {
+  flex: auto;
+}
+.keyboard__key:hover {
+  background-color: rgba(4, 175, 175, 0.5);
+  transform: translateY(1px);
+}
+.active {
+  background-color: rgb(4, 175, 175);
+  transform: translateY(-5px);
+}
+.keyboard__key:active {
+  background-color: rgb(4, 175, 175);
+  transform: translateY(-5px);
+}

@@ -1,5 +1,6 @@
 import './style.css';
 import './components/keyboard.css';
+import './components/button.css';
 import { keyboardInputHandler } from './components/keyboard-handler';
 
 const keys = document.querySelectorAll('.keyboard__key');
